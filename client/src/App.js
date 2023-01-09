@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ApolloServerPluginDrainHttpServer,
   ApolloProvider,
   ApolloClient,
   InMemoryCache,

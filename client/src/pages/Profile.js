@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import FriendList from '../components/FriendList';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-import { redirect, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -17,7 +17,8 @@ const Profile = () => {
 
   // redirect to personal profile page if username is the logged-in user's
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <redirect to="/profile" />;
+    // return <redirect to="/profile" />;
+    return <Navigate to="/profile" />;
   }
 
   if (loading) {
