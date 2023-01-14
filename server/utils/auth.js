@@ -14,8 +14,8 @@ module.exports = {
     let token = req.body.token || req.query.token || req.headers.authorization;
     // separate "Bearer" from "<tokenvalue>"
     // updated becuase I question if this is right
-    // if (req.headers.authorization) {
-    if (token) {
+    if (req.headers.authorization) {
+    // if (token) {
       token = token.split(" ").pop().trim();
     }
     // if no token, return request object as is
